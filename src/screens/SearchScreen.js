@@ -18,32 +18,32 @@ const SearchScreen = () =>{
     };
 
     return(
-        <View style={styles.viewStyle}>
-            <SearchBar 
-                term={term} 
-                onTermChange={ (newTerm) =>setTerm(newTerm)}
-                onTermSubmit={()=>searchApi(term)} />
-            {
-                errorMessage > 0 ?
-                <Text>{errorMessage}</Text>
-                : null
-            }
-            <Text>We found {results.length} results</Text>
-            <ScrollView>
-                <ResultsList 
-                    results={filterResultsByPrice('$')} 
-                    title="Cost Effective"/>
-                <ResultsList 
-                    results={filterResultsByPrice('$$')} 
-                    title="Bit Pricier"/>
-                <ResultsList 
-                    results={filterResultsByPrice('$$$')} 
-                    title="Big Spender"/>
-                <ResultsList 
-                results={filterResultsByPrice('$$$$')} 
-                title="Whale Spender"/>
-            </ScrollView>
-        </View>
+        <>
+        <SearchBar 
+            term={term} 
+            onTermChange={ (newTerm) =>setTerm(newTerm)}
+            onTermSubmit={()=>searchApi(term)} />
+        {
+            errorMessage > 0 ?
+            <Text>{errorMessage}</Text>
+            : null
+        }
+        <Text style={{display:'none'}}>We found {results.length} results</Text>
+        <ScrollView>
+            <ResultsList 
+                results={filterResultsByPrice('$')} 
+                title="Cost Effective"/>
+            <ResultsList 
+                results={filterResultsByPrice('$$')} 
+                title="Bit Pricier"/>
+            <ResultsList 
+                results={filterResultsByPrice('$$$')} 
+                title="Big Spender"/>
+            <ResultsList 
+            results={filterResultsByPrice('$$$$')} 
+            title="Whale Spender"/>
+        </ScrollView>
+        </>
     );
 }
 
