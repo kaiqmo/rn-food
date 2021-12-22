@@ -2,6 +2,8 @@ import React from 'react';
 import { Text, View, StyleSheet, Image} from 'react-native';
 import Footer from '../components/footer';
 import logo from '../../assets/icon.png';
+import SearchScreen from './SearchScreen';
+
 const HomeScreen = () =>{
 
     return(
@@ -10,7 +12,7 @@ const HomeScreen = () =>{
                 style={styles.tinyLogo}
                 source={logo}
             />
-            <Text>  qweeqwe</Text>
+            <SearchScreen/>
             <Footer />
         </View>
     );

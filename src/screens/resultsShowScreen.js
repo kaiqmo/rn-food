@@ -36,7 +36,9 @@ const resultsShowScreen =({navigation}) =>{
 const styles = StyleSheet.create({
     imageStyles:{
         width:150,
-        height:150
+        height:150,
+        justifyContent:'center',
+        alignItems:'center'
     },
 });
 

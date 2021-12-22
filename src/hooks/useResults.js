@@ -6,15 +6,17 @@ export default () =>{
     const [errorMessage,setErrorMessage] = useState('');
 
     const searchApi = async(searchTerm) =>{
+        console.log('teste');
         try{
-        const response = await yelp.get('/search',{
-            params:{
-                limit:50,
-                term:searchTerm,
-                location:'sao paulo'
-            }
-        });
-        setResults(response.data.businesses);
+            const response = await yelp.get('/search',{
+                params:{
+                    limit:50,
+                    term:searchTerm,
+                    location:'sao paulo'
+                }
+            });
+            console.log(response);
+            setResults(response.data.businesses);
         }catch(e){
             console.log('error',e);
             setErrorMessage('Something went Wrong');
